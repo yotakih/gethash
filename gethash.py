@@ -7,7 +7,8 @@ import sys
 def gethash(fl):
 	if os.path.exists(fl):
 		with open(fl, 'rb') as f:
-			return fl,hashlib.md5(f.read()).hexdigest()
+			return (fl, hashlib.md5(f.read()).hexdigest())
+	return (fl,'FILE NOT FOUND')
 
 def gethashs(fls):
 	for f in fls:
